@@ -6,7 +6,7 @@ import { FileParser } from './parsers/file-parser';
 import { ComposerParser } from './parsers/composer-parser';
 import { ComposerJsonFile, ComposerLockFile, ComposerParserResponse, SystemPackages } from './types';
 
-export function buildDepTree(
+function buildDepTree(
   lockFileContent: string,
   manifestFileContent: string,
   defaultProjectName: string,
@@ -31,7 +31,7 @@ export function buildDepTree(
   };
 }
 
-export function buildDepTreeFromFiles(
+function buildDepTreeFromFiles(
   basePath: string,
   lockFileName: string,
   systemVersions: SystemPackages): ComposerParserResponse {
@@ -69,3 +69,12 @@ export function buildDepTreeFromFiles(
 function getDefaultProjectName(basePath: string, lockFileName: string): string {
   return path.dirname(path.resolve(path.join(basePath, lockFileName))).split(path.sep).pop()!;
 }
+
+export {
+  buildDepTree,
+  buildDepTreeFromFiles,
+  SystemPackages,
+  ComposerJsonFile,
+  ComposerLockFile,
+  ComposerParserResponse,
+};
