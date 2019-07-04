@@ -8,7 +8,9 @@
     "lint": "tslint -p tsconfig.json",
     "build": "tsc",
     "build-watch": "tsc -w",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "types": "./dist/index.d.ts",
   "repository": {
@@ -31,7 +33,8 @@
   "author": "snyk.io",
   "license": "Apache-2.0",
   "dependencies": {
-    "lodash": "4.17.11"
+    "lodash": "4.17.11",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/lodash": "4.14.133",
@@ -40,5 +43,6 @@
     "tap": "12.7.0",
     "tslint": "5.17.0",
     "typescript": "3.5.1"
-  }
+  },
+  "snyk": true
 }
