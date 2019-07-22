@@ -4,13 +4,13 @@ import * as path from 'path';
 import { InvalidUserInputError } from './errors';
 import { FileParser } from './parsers/file-parser';
 import { ComposerParser } from './parsers/composer-parser';
-import { ComposerJsonFile, ComposerLockFile, ComposerParserResponse, SystemPackages } from './types';
+import { ComposerJsonFile, ComposerLockFile, ComposerParserResponse, Options, SystemPackages } from './types';
 
 function buildDepTree(
   lockFileContent: string,
   manifestFileContent: string,
   defaultProjectName: string,
-  systemVersions: SystemPackages): ComposerParserResponse {
+  options: Options): ComposerParserResponse {
 
   const lockFileJson: ComposerLockFile = FileParser.parseLockFile(lockFileContent);
   const manifestJson: ComposerJsonFile = FileParser.parseManifestFile(manifestFileContent);
@@ -26,15 +26,20 @@ function buildDepTree(
     name: applicationName,
     version: applicationVersion,
     packageFormatVersion: 'composer:0.0.1',
-    dependencies: ComposerParser.buildDependencies(manifestJson, lockFileJson.packages, manifestJson,
-      [`${applicationName}@${applicationVersion}`], systemVersions),
+    dependencies: ComposerParser.buildDependencies(
+      manifestJson,
+      lockFileJson.packages,
+      lockFileJson['packages-dev'],
+      manifestJson,
+      [`${applicationName}@${applicationVersion}`],
+      options),
   };
 }
 
 function buildDepTreeFromFiles(
   basePath: string,
   lockFileName: string,
-  systemVersions: SystemPackages): ComposerParserResponse {
+  options: Options): ComposerParserResponse {
   if (!basePath) {
     throw new InvalidUserInputError('Missing `basePath` parameter for buildDepTreeFromFiles()');
   }
@@ -43,7 +48,7 @@ function buildDepTreeFromFiles(
     throw new InvalidUserInputError('Missing `lockfile` parameter for buildDepTreeFromFiles()');
   }
 
-  if (!systemVersions) {
+  if (!options.systemVersions) {
     throw new InvalidUserInputError('Missing `systemVersions` parameter for buildDepTreeFromFiles()');
   }
 
@@ -63,7 +68,7 @@ function buildDepTreeFromFiles(
 
   const defaultProjectName: string = getDefaultProjectName(basePath, lockFileName);
 
-  return buildDepTree(lockFileContent, manifestFileContent, defaultProjectName, systemVersions);
+  return buildDepTree(lockFileContent, manifestFileContent, defaultProjectName, options);
 }
 
 function getDefaultProjectName(basePath: string, lockFileName: string): string {
@@ -73,6 +78,7 @@ function getDefaultProjectName(basePath: string, lockFileName: string): string {
 export {
   buildDepTree,
   buildDepTreeFromFiles,
+  Options,
   SystemPackages,
   ComposerJsonFile,
   ComposerLockFile,

@@ -6,7 +6,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     },
     "josantonius/router": {
       "name": "josantonius/router",
@@ -19,16 +20,20 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     }
   }
 }

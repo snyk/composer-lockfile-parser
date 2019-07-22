@@ -18,12 +18,38 @@ const deepTestFolders = [
   'no_branch_alias',
 ];
 
+const deepTestWithDevDepsFolder = [
+  'proj-with-dev-deps',
+];
+
+const prodOptions = { systemVersions: systemVersionsStub };
+const devOptions = { systemVersions: systemVersionsStub, dev: true };
+
 deepTestFolders.forEach((folder) => {
   tap.test('php plugin for ' + folder, async (t) => {
     const projFolder = './test/fixtures/' + folder;
 
     try {
-      const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', systemVersionsStub);
+      const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', prodOptions);
+
+      t.test('match packages with expected', (test) => {
+        const expTree = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer_deps.json'), 'utf-8'));
+
+        test.deepEqual(depTree, expTree);
+        test.end();
+      });
+    } catch (err) {
+      /* do nothing */
+    }
+  });
+});
+
+deepTestWithDevDepsFolder.forEach((folder) => {
+  tap.test('php plugin for ' + folder, async (t) => {
+    const projFolder = './test/fixtures/' + folder;
+
+    try {
+      const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', devOptions);
 
       t.test('match packages with expected', (test) => {
         const expTree = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer_deps.json'), 'utf-8'));
@@ -39,7 +65,7 @@ deepTestFolders.forEach((folder) => {
 
 tap.test('missing function `basePath` param', async (t) => {
   try {
-    buildDepTreeFromFiles(null!, './composer.lock', systemVersionsStub);
+    buildDepTreeFromFiles(null!, './composer.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.equal(err.message, 'Missing `basePath` parameter for buildDepTreeFromFiles()', 'basePath is missing');
@@ -51,7 +77,7 @@ tap.test('missing function `lockFileName` param', async (t) => {
   const projFolder = './test/fixtures/many_deps_php_project';
 
   try {
-    buildDepTreeFromFiles(projFolder, null!, systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, null!, prodOptions);
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.equal(err.message, 'Missing `lockfile` parameter for buildDepTreeFromFiles()', 'lockFileName is missing');
@@ -63,7 +89,7 @@ tap.test('missing function `systemVersion` params', async (t) => {
   const projFolder = './test/fixtures/many_deps_php_project';
 
   try {
-    buildDepTreeFromFiles(projFolder, './composer.lock', null!);
+    buildDepTreeFromFiles(projFolder, './composer.lock', {});
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.equal(err.message, 'Missing `systemVersions` parameter for buildDepTreeFromFiles()',
@@ -76,7 +102,7 @@ tap.test('lockfile not found', async (t) => {
   const projFolder = './test/fixtures/many_deps_php_project';
 
   try {
-    buildDepTreeFromFiles(projFolder, './c_o_m_p_o_s_e_r.lock', systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, './c_o_m_p_o_s_e_r.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.match(err.message, /^Lockfile not found at location:/, 'lockfile not found');
@@ -88,7 +114,7 @@ tap.test('composer.json not found', async (t) => {
   const projFolder = './test/fixtures/missing_compose_json';
 
   try {
-    buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.match(err.message, /^Target file composer\.json not found at location:/, 'composer.json not found');
@@ -100,7 +126,7 @@ tap.test('package param in lock file is missing', async (t) => {
   const projFolder = './test/fixtures/missing_package_prop';
 
   try {
-    buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'InvalidUserInputError', 'correct error type thrown');
     t.equal(err.message, 'Invalid lock file. Must contain `packages` property', 'packages property missing');
@@ -112,7 +138,7 @@ tap.test('composer.lock is not valid json', async (t) => {
   const projFolder = './test/fixtures/lockfile-invalid-json';
 
   try {
-    buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'ParseError', 'correct error type thrown');
     t.equal(err.message, 'Failed to parse lock file. Error: Unexpected token , in JSON at position 6',
@@ -125,7 +151,7 @@ tap.test('composer.json is not valid json', async (t) => {
   const projFolder = './test/fixtures/composer-invalid-json';
 
   try {
-    buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
   } catch (err) {
     t.equal(err.name, 'ParseError', 'correct error type thrown');
     t.equal(err.message, 'Failed to parse manifest file. Error: Unexpected token , in JSON at position 3',
@@ -137,7 +163,7 @@ tap.test('composer.json is not valid json', async (t) => {
 tap.test('composer parser for project with many deps', async (t) => {
   const projFolder = './test/fixtures/many_deps_php_project';
   try {
-    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
     t.test('match root pkg object', (test) => {
       test.match(depTree, {
         name: 'symfony/console',
@@ -156,7 +182,7 @@ tap.test('composer parser for project with interconnected deps', async (t) => {
   const projFolder = './test/fixtures/interdependent_modules';
 
   try {
-    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', prodOptions);
     t.test('match root pkg object', (test) => {
       test.match(depTree, {
         name: 'foo',
@@ -180,7 +206,7 @@ tap.test('with alias, uses correct version', async (t) => {
   try {
     const composerJson = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer.json'), 'utf-8'));
 
-    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', systemVersionsStub);
+    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', prodOptions);
     const deps: any = depTree.dependencies;
     const monologBridgeObj = _.find(deps, {name: 'symfony/monolog-bridge'});
     const actualVersionInstalled = monologBridgeObj.version.slice(0, -2); // remove the trailing .0
@@ -199,7 +225,7 @@ tap.test('with alias, uses correct version', async (t) => {
 tap.test('with alias in external repo', async (t) => {
   const projFolder = './test/fixtures/proj_with_aliases_external_github';
   try {
-    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', systemVersionsStub);
+    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', prodOptions);
 
     const composerJson = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer.json'), 'utf-8'));
     const composerJsonAlias = composerJson.require['symfony/monolog-bridge'];
@@ -261,7 +287,7 @@ tap.test('project name is not empty', async (t) => {
   const projFolder = './test/fixtures/no_project_name';
 
   try {
-    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', systemVersionsStub);
+    const depTree = buildDepTreeFromFiles(projFolder, 'composer.lock', prodOptions);
 
     t.test('make sure project name is no-name', (test) => {
       test.deepEqual(depTree.name, 'no_project_name');

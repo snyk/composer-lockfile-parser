@@ -6,7 +6,8 @@
     "php": {
       "name": "php",
       "version": ">=5.3.2",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     },
     "symfony/symfony": {
       "name": "symfony/symfony",
@@ -27,16 +28,20 @@
                     "php": {
                       "name": "php",
                       "version": ">=5.3.2",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 },
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "doctrine/cache": {
               "name": "doctrine/cache",
@@ -45,9 +50,11 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "doctrine/collections": {
               "name": "doctrine/collections",
@@ -56,9 +63,11 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "doctrine/inflector": {
               "name": "doctrine/inflector",
@@ -67,9 +76,11 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "doctrine/lexer": {
               "name": "doctrine/lexer",
@@ -78,21 +89,26 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": ">=5.3.2",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "psr/log": {
           "name": "psr/log",
@@ -101,9 +117,11 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "symfony/icu": {
           "name": "symfony/icu",
@@ -112,24 +130,29 @@
             "ext-intl": {
               "name": "ext-intl",
               "version": "*",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "lib-icu": {
               "name": "lib-icu",
               "version": ">=4.4",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "symfony/intl": {
               "name": "symfony/intl",
               "version": "~2.3",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "twig/twig": {
           "name": "twig/twig",
@@ -138,11 +161,14 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "yiisoft/yii": {
       "name": "yiisoft/yii",
@@ -151,9 +177,11 @@
         "php": {
           "name": "php",
           "version": ">=5.3.2",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "zendframework/zendframework": {
       "name": "zendframework/zendframework",
@@ -162,9 +190,11 @@
         "php": {
           "name": "php",
           "version": ">=5.3.2",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "aws/aws-sdk-php": {
       "name": "aws/aws-sdk-php",
@@ -181,9 +211,11 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "guzzlehttp/psr7": {
               "name": "guzzlehttp/psr7",
@@ -192,7 +224,8 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "psr/http-message": {
                   "name": "psr/http-message",
@@ -201,18 +234,23 @@
                     "php": {
                       "name": "php",
                       "version": ">=5.3.2",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "guzzlehttp/promises": {
           "name": "guzzlehttp/promises",
@@ -221,9 +259,11 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "guzzlehttp/psr7": {
           "name": "guzzlehttp/psr7",
@@ -232,7 +272,8 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "psr/http-message": {
               "name": "psr/http-message",
@@ -241,11 +282,14 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "mtdowling/jmespath.php": {
           "name": "mtdowling/jmespath.php",
@@ -254,16 +298,20 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": ">=5.3.2",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "doctrine/common": {
       "name": "doctrine/common",
@@ -280,16 +328,20 @@
                 "php": {
                   "name": "php",
                   "version": ">=5.3.2",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "doctrine/cache": {
           "name": "doctrine/cache",
@@ -298,9 +350,11 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "doctrine/collections": {
           "name": "doctrine/collections",
@@ -309,9 +363,11 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "doctrine/inflector": {
           "name": "doctrine/inflector",
@@ -320,9 +376,11 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "doctrine/lexer": {
           "name": "doctrine/lexer",
@@ -331,16 +389,20 @@
             "php": {
               "name": "php",
               "version": ">=5.3.2",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": ">=5.3.2",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     }
   }
 }

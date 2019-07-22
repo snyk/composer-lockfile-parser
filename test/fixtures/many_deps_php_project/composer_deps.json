@@ -6,7 +6,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     },
     "symfony/polyfill-mbstring": {
       "name": "symfony/polyfill-mbstring",
@@ -15,9 +16,11 @@
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "symfony/debug": {
       "name": "symfony/debug",
@@ -26,7 +29,8 @@
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "psr/log": {
           "name": "psr/log",
@@ -35,16 +39,20 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "ext-dom": {
       "name": "ext-dom",
       "version": "20031129",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     },
     "phpunit/phpunit": {
       "name": "phpunit/phpunit",
@@ -53,27 +61,32 @@
         "ext-dom": {
           "name": "ext-dom",
           "version": "20031129",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "ext-json": {
           "name": "ext-json",
           "version": "1.5.0",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "ext-libxml": {
           "name": "ext-libxml",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "ext-mbstring": {
           "name": "ext-mbstring",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "ext-xml": {
           "name": "ext-xml",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "myclabs/deep-copy": {
           "name": "myclabs/deep-copy",
@@ -82,9 +95,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phar-io/manifest": {
           "name": "phar-io/manifest",
@@ -93,12 +108,14 @@
             "ext-dom": {
               "name": "ext-dom",
               "version": "20031129",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "ext-phar": {
               "name": "ext-phar",
               "version": "*",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "phar-io/version": {
               "name": "phar-io/version",
@@ -107,16 +124,20 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phar-io/version": {
           "name": "phar-io/version",
@@ -125,14 +146,17 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "phpspec/prophecy": {
           "name": "phpspec/prophecy",
@@ -145,14 +169,17 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "phpdocumentor/reflection-docblock": {
               "name": "phpdocumentor/reflection-docblock",
@@ -161,7 +188,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "phpdocumentor/reflection-common": {
                   "name": "phpdocumentor/reflection-common",
@@ -170,9 +198,11 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 },
                 "phpdocumentor/type-resolver": {
                   "name": "phpdocumentor/type-resolver",
@@ -181,7 +211,8 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     },
                     "phpdocumentor/reflection-common": {
                       "name": "phpdocumentor/reflection-common",
@@ -190,11 +221,14 @@
                         "php": {
                           "name": "php",
                           "version": "7.1.12",
-                          "dependencies": {}
+                          "dependencies": {},
+                          "depType": "prod"
                         }
-                      }
+                      },
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 },
                 "webmozart/assert": {
                   "name": "webmozart/assert",
@@ -203,11 +237,14 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/comparator": {
               "name": "sebastian/comparator",
@@ -216,7 +253,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "sebastian/diff": {
                   "name": "sebastian/diff",
@@ -225,9 +263,11 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 },
                 "sebastian/exporter": {
                   "name": "sebastian/exporter",
@@ -236,7 +276,8 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     },
                     "sebastian/recursion-context": {
                       "name": "sebastian/recursion-context",
@@ -245,13 +286,17 @@
                         "php": {
                           "name": "php",
                           "version": "7.1.12",
-                          "dependencies": {}
+                          "dependencies": {},
+                          "depType": "prod"
                         }
-                      }
+                      },
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/recursion-context": {
               "name": "sebastian/recursion-context",
@@ -260,11 +305,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phpunit/php-code-coverage": {
           "name": "phpunit/php-code-coverage",
@@ -273,17 +321,20 @@
             "ext-dom": {
               "name": "ext-dom",
               "version": "20031129",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "ext-xmlwriter": {
               "name": "ext-xmlwriter",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "phpunit/php-file-iterator": {
               "name": "phpunit/php-file-iterator",
@@ -292,9 +343,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "phpunit/php-text-template": {
               "name": "phpunit/php-text-template",
@@ -303,9 +356,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "phpunit/php-token-stream": {
               "name": "phpunit/php-token-stream",
@@ -314,14 +369,17 @@
                 "ext-tokenizer": {
                   "name": "ext-tokenizer",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/code-unit-reverse-lookup": {
               "name": "sebastian/code-unit-reverse-lookup",
@@ -330,9 +388,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/environment": {
               "name": "sebastian/environment",
@@ -341,9 +401,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/version": {
               "name": "sebastian/version",
@@ -352,9 +414,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "theseer/tokenizer": {
               "name": "theseer/tokenizer",
@@ -363,26 +427,32 @@
                 "ext-dom": {
                   "name": "ext-dom",
                   "version": "20031129",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "ext-tokenizer": {
                   "name": "ext-tokenizer",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "ext-xmlwriter": {
                   "name": "ext-xmlwriter",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phpunit/php-file-iterator": {
           "name": "phpunit/php-file-iterator",
@@ -391,9 +461,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phpunit/php-text-template": {
           "name": "phpunit/php-text-template",
@@ -402,9 +474,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phpunit/php-timer": {
           "name": "phpunit/php-timer",
@@ -413,9 +487,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "phpunit/phpunit-mock-objects": {
           "name": "phpunit/phpunit-mock-objects",
@@ -428,14 +504,17 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "phpunit/php-text-template": {
               "name": "phpunit/php-text-template",
@@ -444,9 +523,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/exporter": {
               "name": "sebastian/exporter",
@@ -455,7 +536,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "sebastian/recursion-context": {
                   "name": "sebastian/recursion-context",
@@ -464,13 +546,17 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/comparator": {
           "name": "sebastian/comparator",
@@ -479,7 +565,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "sebastian/diff": {
               "name": "sebastian/diff",
@@ -488,9 +575,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/exporter": {
               "name": "sebastian/exporter",
@@ -499,7 +588,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "sebastian/recursion-context": {
                   "name": "sebastian/recursion-context",
@@ -508,13 +598,17 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/diff": {
           "name": "sebastian/diff",
@@ -523,9 +617,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/environment": {
           "name": "sebastian/environment",
@@ -534,9 +630,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/exporter": {
           "name": "sebastian/exporter",
@@ -545,7 +643,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "sebastian/recursion-context": {
               "name": "sebastian/recursion-context",
@@ -554,11 +653,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/global-state": {
           "name": "sebastian/global-state",
@@ -567,9 +669,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/object-enumerator": {
           "name": "sebastian/object-enumerator",
@@ -578,7 +682,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "sebastian/object-reflector": {
               "name": "sebastian/object-reflector",
@@ -587,9 +692,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "sebastian/recursion-context": {
               "name": "sebastian/recursion-context",
@@ -598,11 +705,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/resource-operations": {
           "name": "sebastian/resource-operations",
@@ -611,9 +721,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "sebastian/version": {
           "name": "sebastian/version",
@@ -622,11 +734,14 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "okaufmann/swiss-weather-api": {
       "name": "okaufmann/swiss-weather-api",
@@ -643,9 +758,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "guzzlehttp/psr7": {
               "name": "guzzlehttp/psr7",
@@ -654,7 +771,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "psr/http-message": {
                   "name": "psr/http-message",
@@ -663,18 +781,23 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "illuminate/support": {
           "name": "illuminate/support",
@@ -687,14 +810,17 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "ext-mbstring": {
               "name": "ext-mbstring",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "illuminate/contracts": {
               "name": "illuminate/contracts",
@@ -703,7 +829,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "psr/container": {
                   "name": "psr/container",
@@ -712,9 +839,11 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 },
                 "psr/simple-cache": {
                   "name": "psr/simple-cache",
@@ -723,11 +852,14 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "nesbot/carbon": {
               "name": "nesbot/carbon",
@@ -736,7 +868,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "symfony/translation": {
                   "name": "symfony/translation",
@@ -745,7 +878,8 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     },
                     "symfony/polyfill-mbstring": {
                       "name": "symfony/polyfill-mbstring",
@@ -754,20 +888,26 @@
                         "php": {
                           "name": "php",
                           "version": "7.1.12",
-                          "dependencies": {}
+                          "dependencies": {},
+                          "depType": "prod"
                         }
-                      }
+                      },
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "kevinrob/guzzle-cache-middleware": {
           "name": "kevinrob/guzzle-cache-middleware",
@@ -776,14 +916,17 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "spatie/regex": {
           "name": "spatie/regex",
@@ -792,11 +935,14 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     }
   }
 }

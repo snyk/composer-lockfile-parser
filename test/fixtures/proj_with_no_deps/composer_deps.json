@@ -6,7 +6,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     }
   }
 }

@@ -6,7 +6,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "depType": "prod"
     },
     "symfony/monolog-bundle": {
       "name": "symfony/monolog-bundle",
@@ -19,7 +20,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "psr/log": {
               "name": "psr/log",
@@ -28,16 +30,20 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         },
         "symfony/config": {
           "name": "symfony/config",
@@ -46,7 +52,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "symfony/filesystem": {
               "name": "symfony/filesystem",
@@ -55,11 +62,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "symfony/dependency-injection": {
           "name": "symfony/dependency-injection",
@@ -68,7 +78,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "psr/container": {
               "name": "psr/container",
@@ -77,11 +88,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "symfony/http-kernel": {
           "name": "symfony/http-kernel",
@@ -90,7 +104,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "psr/log": {
               "name": "psr/log",
@@ -99,9 +114,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "symfony/debug": {
               "name": "symfony/debug",
@@ -110,7 +127,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "psr/log": {
                   "name": "psr/log",
@@ -119,11 +137,14 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "symfony/event-dispatcher": {
               "name": "symfony/event-dispatcher",
@@ -132,9 +153,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "symfony/http-foundation": {
               "name": "symfony/http-foundation",
@@ -143,7 +166,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "symfony/polyfill-mbstring": {
                   "name": "symfony/polyfill-mbstring",
@@ -152,13 +176,17 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "symfony/monolog-bridge": {
           "name": "symfony/monolog-bridge",
@@ -171,7 +199,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 },
                 "psr/log": {
                   "name": "psr/log",
@@ -180,20 +209,26 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "depType": "prod"
                     }
-                  }
+                  },
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     },
     "symfony/monolog-bridge": {
       "name": "symfony/monolog-bridge",
@@ -206,7 +241,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "depType": "prod"
             },
             "psr/log": {
               "name": "psr/log",
@@ -215,18 +251,23 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "depType": "prod"
                 }
-              }
+              },
+              "depType": "prod"
             }
-          }
+          },
+          "depType": "prod"
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "depType": "prod"
         }
-      }
+      },
+      "depType": "prod"
     }
   }
 }

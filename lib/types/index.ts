@@ -6,6 +6,7 @@ export interface ComposerJsonFile {
   version?: string;
   extra: ComposerExtras;
   require: ComposerDependencies;
+  'require-dev': ComposerDependencies;
 }
 
 export interface ComposerExtras {
@@ -29,6 +30,7 @@ export interface LockFilePackage {
   name: string;
   version?: string;
   require: LockFileDependencies;
+  'require-dev': LockFileDependencies;
 }
 
 export interface LockFileDependencies {
@@ -42,13 +44,24 @@ export interface DepTree {
   name: string;
   version: string;
   dependencies: DepTreeDependencies;
+  depType?: DepType;
 }
 
 export type DepTreeDependencies = DepTree | {};
 
+export enum DepType {
+  prod = 'prod',
+  dev = 'dev',
+}
+
 /**
  * Helper types
  */
+export interface Options {
+  dev?: boolean;
+  systemVersions?: SystemPackages;
+}
+
 export interface SystemPackages {
   [depName: string]: string;
 }

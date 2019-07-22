@@ -1,12 +1,13 @@
 import * as _ from 'lodash';
 
 import {
-  DepTree,
-  SystemPackages,
-  PackageRefCount,
-  LockFilePackage,
-  ComposerJsonFile,
   ComposerDependencies,
+  ComposerJsonFile,
+  DepTree,
+  DepType,
+  LockFilePackage,
+  Options,
+  PackageRefCount,
 } from '../types';
 
 export class ComposerParser {
@@ -34,18 +35,19 @@ export class ComposerParser {
   public static buildDependencies(
     composerJsonObj: ComposerJsonFile,
     composerLockObjPackages: LockFilePackage[],
+    composerLockObjPackagesDev: LockFilePackage[],
     depObj: ComposerJsonFile | LockFilePackage,
     depRecursiveArray: string[],
-    systemVersions: SystemPackages,
+    options: Options,
     packageReferencesCount: PackageRefCount = {}): DepTree | {} {
-    const requires: ComposerDependencies | undefined = _.get(depObj, 'require', undefined);
-    if (!requires) {
-      return {};
-    }
+    const require: ComposerDependencies = _.get(depObj, 'require');
+    const requireDev: ComposerDependencies = options.dev ? _.get(depObj, 'require-dev') : {};
+
+    const allDeps: ComposerDependencies = Object.assign({}, require, requireDev);
 
     const result = {};
 
-    for (const depName of Object.keys(requires)) {
+    for (const depName of Object.keys(allDeps)) {
       let depFoundVersion;
       // lets find if this dependency has an object in composer.lock
       const applicationData = composerLockObjPackages.find((composerPackage) => {
@@ -57,9 +59,14 @@ export class ComposerParser {
       } else {
         // here we use the version from the requires - not a locked version
         const composerJsonRequires = _.get(composerJsonObj, 'require');
-        depFoundVersion = _.get(systemVersions, depName) ||
+        const composerJsonRequiresDev = options.dev ? _.get(composerJsonObj, 'require-dev') : {};
+        depFoundVersion = _.get(options.systemVersions, depName) ||
           _.get(composerJsonRequires, depName) ||
-          _.get(requires, depName);
+          // tslint:disable-next-line:max-line-length
+          (_.find(composerLockObjPackagesDev, { name: depName }) && _.find(composerLockObjPackagesDev, { name: depName })!.version) ||
+          _.get(composerJsonRequiresDev, depName) ||
+          _.get(require, depName) ||
+          _.get(requireDev, depName);
       }
 
       depFoundVersion = depFoundVersion.replace(/^v(\d)/, '$1');
@@ -68,6 +75,7 @@ export class ComposerParser {
         name: depName,
         version: depFoundVersion,
         dependencies: {},
+        depType: require[depName] ? DepType.prod : DepType.dev,
       };
 
       let refCount = packageReferencesCount[depName] || 0;
@@ -78,9 +86,10 @@ export class ComposerParser {
         result[depName].dependencies =
           ComposerParser.buildDependencies(composerJsonObj,
             composerLockObjPackages,
+            composerLockObjPackagesDev,
             _.find(composerLockObjPackages, {name: depName})!,
             depRecursiveArray,
-            systemVersions,
+            options,
             packageReferencesCount);
         depRecursiveArray.pop();
       }
@@ -90,6 +99,6 @@ export class ComposerParser {
   }
 
   private static alreadyAddedDep(arrayOfFroms, packageName): boolean {
-    return arrayOfFroms.indexOf(packageName) > -1;
+    return arrayOfFroms.includes(packageName);
   }
 }

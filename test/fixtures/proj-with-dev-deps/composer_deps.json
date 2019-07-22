@@ -1,0 +1,382 @@
+{
+  "name": "composer/composer",
+  "version": "1.9-",
+  "packageFormatVersion": "composer:0.0.1",
+  "dependencies": {
+    "php": {
+      "name": "php",
+      "version": "7.1.12",
+      "dependencies": {},
+      "depType": "prod"
+    },
+    "composer/ca-bundle": {
+      "name": "composer/ca-bundle",
+      "version": "1.1.4",
+      "dependencies": {
+        "ext-openssl": {
+          "name": "ext-openssl",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "ext-pcre": {
+          "name": "ext-pcre",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        },
+        "psr/log": {
+          "name": "psr/log",
+          "version": "1.1.0",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "dev"
+        },
+        "symfony/process": {
+          "name": "symfony/process",
+          "version": "2.8.50",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "composer/semver": {
+      "name": "composer/semver",
+      "version": "1.5.0",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        },
+        "phpunit/phpunit-mock-objects": {
+          "name": "phpunit/phpunit-mock-objects",
+          "version": "^2.3 || ^3.0",
+          "dependencies": {},
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "composer/spdx-licenses": {
+      "name": "composer/spdx-licenses",
+      "version": "1.5.1",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "composer/xdebug-handler": {
+      "name": "composer/xdebug-handler",
+      "version": "1.3.3",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "psr/log": {
+          "name": "psr/log",
+          "version": "1.1.0",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "prod"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "justinrainbow/json-schema": {
+      "name": "justinrainbow/json-schema",
+      "version": "5.2.8",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "friendsofphp/php-cs-fixer": {
+          "name": "friendsofphp/php-cs-fixer",
+          "version": "~2.2.20",
+          "dependencies": {},
+          "depType": "dev"
+        },
+        "json-schema/json-schema-test-suite": {
+          "name": "json-schema/json-schema-test-suite",
+          "version": "1.2.0",
+          "dependencies": {},
+          "depType": "dev"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "psr/log": {
+      "name": "psr/log",
+      "version": "1.1.0",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        }
+      },
+      "depType": "prod"
+    },
+    "seld/jsonlint": {
+      "name": "seld/jsonlint",
+      "version": "1.7.1",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "phpunit/phpunit": {
+          "name": "phpunit/phpunit",
+          "version": "^4.8.35 || ^5.7",
+          "dependencies": {},
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "seld/phar-utils": {
+      "name": "seld/phar-utils",
+      "version": "1.0.1",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        }
+      },
+      "depType": "prod"
+    },
+    "symfony/console": {
+      "name": "symfony/console",
+      "version": "2.8.50",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "symfony/debug": {
+          "name": "symfony/debug",
+          "version": "2.8.50",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            },
+            "psr/log": {
+              "name": "psr/log",
+              "version": "1.1.0",
+              "dependencies": {
+                "php": {
+                  "name": "php",
+                  "version": "7.1.12",
+                  "dependencies": {},
+                  "depType": "prod"
+                }
+              },
+              "depType": "prod"
+            },
+            "symfony/class-loader": {
+              "name": "symfony/class-loader",
+              "version": "~2.2|~3.0.0",
+              "dependencies": {},
+              "depType": "dev"
+            },
+            "symfony/http-kernel": {
+              "name": "symfony/http-kernel",
+              "version": "~2.3.24|~2.5.9|^2.6.2|~3.0.0",
+              "dependencies": {},
+              "depType": "dev"
+            }
+          },
+          "depType": "prod"
+        },
+        "symfony/polyfill-mbstring": {
+          "name": "symfony/polyfill-mbstring",
+          "version": "1.11.0",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "prod"
+        },
+        "psr/log": {
+          "name": "psr/log",
+          "version": "1.1.0",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "dev"
+        },
+        "symfony/event-dispatcher": {
+          "name": "symfony/event-dispatcher",
+          "version": "~2.1|~3.0.0",
+          "dependencies": {},
+          "depType": "dev"
+        },
+        "symfony/process": {
+          "name": "symfony/process",
+          "version": "2.8.50",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "dev"
+        }
+      },
+      "depType": "prod"
+    },
+    "symfony/filesystem": {
+      "name": "symfony/filesystem",
+      "version": "2.8.50",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        },
+        "symfony/polyfill-ctype": {
+          "name": "symfony/polyfill-ctype",
+          "version": "1.11.0",
+          "dependencies": {
+            "php": {
+              "name": "php",
+              "version": "7.1.12",
+              "dependencies": {},
+              "depType": "prod"
+            }
+          },
+          "depType": "prod"
+        }
+      },
+      "depType": "prod"
+    },
+    "symfony/finder": {
+      "name": "symfony/finder",
+      "version": "2.8.50",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        }
+      },
+      "depType": "prod"
+    },
+    "symfony/process": {
+      "name": "symfony/process",
+      "version": "2.8.50",
+      "dependencies": {
+        "php": {
+          "name": "php",
+          "version": "7.1.12",
+          "dependencies": {},
+          "depType": "prod"
+        }
+      },
+      "depType": "prod"
+    },
+    "phpunit/phpunit": {
+      "name": "phpunit/phpunit",
+      "version": "^4.8.35 || ^5.7",
+      "dependencies": {},
+      "depType": "dev"
+    },
+    "phpunit/phpunit-mock-objects": {
+      "name": "phpunit/phpunit-mock-objects",
+      "version": "^2.3 || ^3.0",
+      "dependencies": {},
+      "depType": "dev"
+    }
+  }
+}
