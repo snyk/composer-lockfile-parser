@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as tap from 'tap';
 import * as _ from 'lodash';
 import * as path from 'path';
-import request from 'sync-request';
+import fetch from 'node-fetch';
 
 import { buildDepTreeFromFiles } from '../lib';
 import { systemVersionsStub } from './stubs/system_deps_stub';
@@ -212,12 +212,12 @@ tap.test('with alias in external repo', async (t) => {
 
     // sometimes we hit the github api limit, so we use a mock
     try {
-      const res = request('GET', apiBranchesUrl, {
+      const res = await fetch(apiBranchesUrl, {
         headers: {
           'user-agent': 'CI Testing',
         },
       });
-      branchesData = JSON.parse(res.getBody().toString());
+      branchesData = await res.json();
     } catch (error) {
       branchesData = [
         {name: 'my-bugfix'},
