@@ -1,13 +1,13 @@
 {
-  "name": "adodb/adodb-php",
+  "name": "simple/hello-php",
   "version": "0.0.0",
   "packageFormatVersion": "composer:0.0.1",
   "hasDevDependencies": false,
   "dependencies": {
     "php": {
+      "dependencies": {},
       "name": "php",
-      "version": "7.1.12",
-      "dependencies": {}
+      "version": "7.1.12"
     }
   }
 }

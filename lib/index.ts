@@ -10,7 +10,8 @@ function buildDepTree(
   lockFileContent: string,
   manifestFileContent: string,
   defaultProjectName: string,
-  systemVersions: SystemPackages): ComposerParserResponse {
+  systemVersions: SystemPackages,
+  includeDev = false): ComposerParserResponse {
 
   const lockFileJson: ComposerLockFile = FileParser.parseLockFile(lockFileContent);
   const manifestJson: ComposerJsonFile = FileParser.parseManifestFile(manifestFileContent);
@@ -19,22 +20,31 @@ function buildDepTree(
     throw new InvalidUserInputError('Invalid lock file. Must contain `packages` property');
   }
 
-  const applicationName: string = manifestJson.name || defaultProjectName;
-  const applicationVersion: string = ComposerParser.getVersion(manifestJson) || '0.0.0';
+  const name: string = manifestJson.name || defaultProjectName;
+  const version: string = ComposerParser.getVersion(manifestJson) || '0.0.0';
+  const dependencies = ComposerParser.buildDependencies(
+    manifestJson,
+    lockFileJson.packages,
+    manifestJson,
+    [`${name}@${version}`],
+    systemVersions,
+    includeDev,
+  );
 
   return {
-    name: applicationName,
-    version: applicationVersion,
+    name,
+    version,
+    dependencies,
     packageFormatVersion: 'composer:0.0.1',
-    dependencies: ComposerParser.buildDependencies(manifestJson, lockFileJson.packages, manifestJson,
-      [`${applicationName}@${applicationVersion}`], systemVersions),
+    hasDevDependencies: includeDev,
   };
 }
 
 function buildDepTreeFromFiles(
   basePath: string,
   lockFileName: string,
-  systemVersions: SystemPackages): ComposerParserResponse {
+  systemVersions: SystemPackages,
+  includeDev = false): ComposerParserResponse {
   if (!basePath) {
     throw new InvalidUserInputError('Missing `basePath` parameter for buildDepTreeFromFiles()');
   }
@@ -63,7 +73,7 @@ function buildDepTreeFromFiles(
 
   const defaultProjectName: string = getDefaultProjectName(basePath, lockFileName);
 
-  return buildDepTree(lockFileContent, manifestFileContent, defaultProjectName, systemVersions);
+  return buildDepTree(lockFileContent, manifestFileContent, defaultProjectName, systemVersions, includeDev);
 }
 
 function getDefaultProjectName(basePath: string, lockFileName: string): string {

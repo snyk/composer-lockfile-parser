@@ -37,6 +37,20 @@ deepTestFolders.forEach((folder) => {
   });
 });
 
+tap.test('dev dependencies are not parsed by default', async (t) => {
+  const projFolder = './test/fixtures/proj_with_dev_deps';
+  try {
+    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub);
+    t.test('match packages with expected', (test) => {
+      const expTree = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer_deps.json'), 'utf-8'));
+      test.deepEqual(depTree, expTree);
+      test.end();
+    });
+  } catch (err) {
+    t.fail('Unexpected error', err);
+  }
+});
+
 tap.test('missing function `basePath` param', async (t) => {
   try {
     buildDepTreeFromFiles(null!, './composer.lock', systemVersionsStub);
@@ -143,6 +157,7 @@ tap.test('composer parser for project with many deps', async (t) => {
         name: 'symfony/console',
         version: '4.0-dev',
         packageFormatVersion: 'composer:0.0.1',
+        hasDevDependencies: false,
       }, 'root pkg');
 
       test.end();
@@ -162,6 +177,7 @@ tap.test('composer parser for project with interconnected deps', async (t) => {
         name: 'foo',
         version: '1.1.1',
         packageFormatVersion: 'composer:0.0.1',
+        hasDevDependencies: false,
       }, 'root pkg');
 
       test.end();
