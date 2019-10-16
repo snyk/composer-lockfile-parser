@@ -2,6 +2,7 @@
   "name": "circular/deps",
   "version": "4.0-dev",
   "packageFormatVersion": "composer:0.0.1",
+  "hasDevDependencies": false,
   "dependencies": {
     "php": {
       "name": "php",

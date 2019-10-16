@@ -37,6 +37,7 @@ export class ComposerParser {
     depObj: ComposerJsonFile | LockFilePackage,
     depRecursiveArray: string[],
     systemVersions: SystemPackages,
+    includeDev = false,
     packageReferencesCount: PackageRefCount = {}): DepTree | {} {
     const requires: ComposerDependencies | undefined = _.get(depObj, 'require', undefined);
     if (!requires) {
@@ -81,6 +82,7 @@ export class ComposerParser {
             _.find(composerLockObjPackages, {name: depName})!,
             depRecursiveArray,
             systemVersions,
+            includeDev,
             packageReferencesCount);
         depRecursiveArray.pop();
       }

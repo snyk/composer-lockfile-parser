@@ -6,6 +6,7 @@ export interface ComposerJsonFile {
   version?: string;
   extra: ComposerExtras;
   require: ComposerDependencies;
+  'require-dev'?: ComposerDependencies;
 }
 
 export interface ComposerExtras {
@@ -20,6 +21,7 @@ export interface ComposerDependencies {
 
 export interface ComposerLockFile {
   packages: LockFilePackage[];
+  'packages-dev'?: LockFileDependencies[];
 }
 
 /**
@@ -29,6 +31,7 @@ export interface LockFilePackage {
   name: string;
   version?: string;
   require: LockFileDependencies;
+  'require-dev'?: LockFileDependencies;
 }
 
 export interface LockFileDependencies {
@@ -42,6 +45,14 @@ export interface DepTree {
   name: string;
   version: string;
   dependencies: DepTreeDependencies;
+  labels?: {
+     scope?: Scope;
+  };
+}
+
+export enum Scope {
+  prod = 'prod',
+  dev = 'dev',
 }
 
 export type DepTreeDependencies = DepTree | {};
@@ -65,4 +76,5 @@ export interface ComposerParserResponse {
   version: string;
   packageFormatVersion: 'composer:0.0.1';
   dependencies: DepTreeDependencies;
+  hasDevDependencies: boolean;
 }
