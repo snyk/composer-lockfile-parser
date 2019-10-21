@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as _ from 'lodash';
 import * as path from 'path';
 
 import { InvalidUserInputError } from './errors';
@@ -11,7 +12,8 @@ function buildDepTree(
   manifestFileContent: string,
   defaultProjectName: string,
   systemVersions: SystemPackages,
-  includeDev = false): ComposerParserResponse {
+  includeDev = false,
+): ComposerParserResponse {
 
   const lockFileJson: ComposerLockFile = FileParser.parseLockFile(lockFileContent);
   const manifestJson: ComposerJsonFile = FileParser.parseManifestFile(manifestFileContent);
@@ -24,19 +26,19 @@ function buildDepTree(
   const version: string = ComposerParser.getVersion(manifestJson) || '0.0.0';
   const dependencies = ComposerParser.buildDependencies(
     manifestJson,
-    lockFileJson.packages,
+    lockFileJson,
     manifestJson,
-    [`${name}@${version}`],
     systemVersions,
     includeDev,
   );
+  const hasDevDependencies = !_.isEmpty(manifestJson['require-dev']);
 
   return {
     name,
     version,
     dependencies,
+    hasDevDependencies,
     packageFormatVersion: 'composer:0.0.1',
-    hasDevDependencies: includeDev,
   };
 }
 

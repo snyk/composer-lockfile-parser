@@ -7,7 +7,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "labels": { "scope": "prod" }
     },
     "josantonius/router": {
       "name": "josantonius/router",
@@ -20,16 +21,20 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     }
   }
 }

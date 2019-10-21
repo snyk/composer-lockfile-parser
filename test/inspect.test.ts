@@ -16,6 +16,7 @@ const deepTestFolders = [
   'proj_with_aliases',
   'proj_with_aliases_external_github',
   'no_branch_alias',
+  'lockfile_with_no_name_dep',
 ];
 
 deepTestFolders.forEach((folder) => {
@@ -32,7 +33,7 @@ deepTestFolders.forEach((folder) => {
         test.end();
       });
     } catch (err) {
-      /* do nothing */
+      t.fail('Unexpected Error', err);
     }
   });
 });
@@ -47,7 +48,21 @@ tap.test('dev dependencies are not parsed by default', async (t) => {
       test.end();
     });
   } catch (err) {
-    t.fail('Unexpected error', err);
+    t.fail('Unexpected Error', err);
+  }
+});
+
+tap.test('dev dependencies are parsed when include dev true', async (t) => {
+  const projFolder = './test/fixtures/proj_with_dev_deps';
+  try {
+    const depTree = buildDepTreeFromFiles(projFolder, './composer.lock', systemVersionsStub, true);
+    t.test('match packages with expected', (test) => {
+      const expTree = JSON.parse(fs.readFileSync(path.resolve(projFolder, 'composer_deps_with_dev.json'), 'utf-8'));
+      test.deepEqual(depTree, expTree);
+      test.end();
+    });
+  } catch (err) {
+    t.fail('Unexpected Error', err);
   }
 });
 
@@ -157,13 +172,13 @@ tap.test('composer parser for project with many deps', async (t) => {
         name: 'symfony/console',
         version: '4.0-dev',
         packageFormatVersion: 'composer:0.0.1',
-        hasDevDependencies: false,
+        hasDevDependencies: true,
       }, 'root pkg');
 
       test.end();
     });
   } catch (err) {
-    /* do nothing */
+    t.fail('Unexpected Error', err);
   }
 });
 
@@ -187,7 +202,7 @@ tap.test('composer parser for project with interconnected deps', async (t) => {
       test.end();
     });
   } catch (err) {
-    /* do nothing */
+    t.fail('Unexpected Error', err);
   }
 });
 
@@ -208,7 +223,7 @@ tap.test('with alias, uses correct version', async (t) => {
       test.end();
     });
   } catch (err) {
-    /* do nothing */
+    t.fail('Unexpected Error', err);
   }
 });
 
@@ -255,7 +270,11 @@ tap.test('with alias in external repo', async (t) => {
         'there should be a url subproperty');
       test.equal(composerJson.repositories[0].type, 'vcs', 'there should be a type subproperty');
       // the alias is a branch
-      test.equal(aliasBranch, ourAliasBranchName, 'alias branch not found on remote github');
+      test.equal(
+        aliasBranch,
+        ourAliasBranchName,
+        `alias branch not found on remote github, ${aliasBranch} != ${ourAliasBranchName}`,
+      );
       test.end();
     });
 
@@ -269,7 +288,7 @@ tap.test('with alias in external repo', async (t) => {
       test.end();
     });
   } catch (err) {
-    /* do nothing */
+    t.fail('Unexpected Error', err);
   }
 });
 
@@ -286,6 +305,6 @@ tap.test('project name is not empty', async (t) => {
 
     t.end();
   } catch (err) {
-    /* do nothing */
+    t.fail('Unexpected Error', err);
   }
 });

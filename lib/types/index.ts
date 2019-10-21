@@ -21,7 +21,7 @@ export interface ComposerDependencies {
 
 export interface ComposerLockFile {
   packages: LockFilePackage[];
-  'packages-dev'?: LockFileDependencies[];
+  'packages-dev'?: LockFilePackage[];
 }
 
 /**

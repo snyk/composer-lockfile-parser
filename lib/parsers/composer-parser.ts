@@ -1,12 +1,13 @@
 import * as _ from 'lodash';
 
 import {
-  DepTree,
   SystemPackages,
   PackageRefCount,
   LockFilePackage,
   ComposerJsonFile,
-  ComposerDependencies,
+  ComposerLockFile,
+  DepTreeDependencies,
+  Scope,
 } from '../types';
 
 export class ComposerParser {
@@ -15,7 +16,7 @@ export class ComposerParser {
   // that depend on each other (producing N! branches of the dep tree).
   // The value of 150 was chosen as a lowest one that doesn't break existing tests.
   // Switching to dependency graph would render this trick obsolete.
-  private static MAX_PACKAGE_REPEATS: number = 150;
+  private static readonly MAX_PACKAGE_REPEATS: number = 150;
 
   public static getVersion(depObj: ComposerJsonFile | LockFilePackage): string {
     // check for `version` property. may not exist
@@ -33,65 +34,129 @@ export class ComposerParser {
 
   public static buildDependencies(
     composerJsonObj: ComposerJsonFile,
-    composerLockObjPackages: LockFilePackage[],
+    composerLockObj: ComposerLockFile,
     depObj: ComposerJsonFile | LockFilePackage,
-    depRecursiveArray: string[],
-    systemVersions: SystemPackages,
+    systemPackages: SystemPackages,
     includeDev = false,
-    packageReferencesCount: PackageRefCount = {}): DepTree | {} {
-    const requires: ComposerDependencies | undefined = _.get(depObj, 'require', undefined);
-    if (!requires) {
-      return {};
+    isDevTree = false,
+    depRecursiveArray: string[] = [],
+    packageRefCount: PackageRefCount = {},
+  ): DepTreeDependencies {
+
+    const result: DepTreeDependencies = {};
+
+    // find depObj properties
+    const depName = _.get(depObj, 'name');
+    const require = _.get(depObj, 'require', {});
+    const requireDev = includeDev ? _.get(depObj, 'require-dev', {}) : {};
+
+    // recursion tests
+    const inRecursiveArray = depRecursiveArray.indexOf(depName) > -1;
+    const exceedsMaxRepeats = packageRefCount[depName] >= this.MAX_PACKAGE_REPEATS;
+    const hasNoDependencies = _.isEmpty(require) && _.isEmpty(requireDev);
+
+    // break recursion when
+    if (inRecursiveArray || exceedsMaxRepeats || hasNoDependencies) {
+      return result;
     }
 
-    const result = {};
+    // prevent circular dependencies
+    depRecursiveArray.push(depName);
 
-    for (const depName of Object.keys(requires)) {
-      let depFoundVersion;
+    // get locked packages
+    const packages = _.get(composerLockObj, 'packages', []);
+    const packagesDev = includeDev ? _.get(composerLockObj, 'packages-dev', []) : [];
+    const allPackages = [
+      ...packages,
+      ...packagesDev,
+    ];
+
+    // parse require dependencies
+    for (const name of Object.keys(require)) {
+
+      let version = '';
+
       // lets find if this dependency has an object in composer.lock
-      const applicationData = composerLockObjPackages.find((composerPackage) => {
-        return composerPackage.name === depName;
-      });
+      const lockedPackage = allPackages.find((dep) => dep.name === name);
 
-      if (applicationData) {
-        depFoundVersion = this.getVersion(applicationData);
+      if (lockedPackage) {
+        version = this.getVersion(lockedPackage);
       } else {
-        // here we use the version from the requires - not a locked version
-        const composerJsonRequires = _.get(composerJsonObj, 'require');
-        depFoundVersion = _.get(systemVersions, depName) ||
-          _.get(composerJsonRequires, depName) ||
-          _.get(requires, depName);
+        // here we use the system version or composer json - not a locked version
+        version = _.get(systemPackages, name) || _.get(require, name);
       }
 
-      depFoundVersion = depFoundVersion.replace(/^v(\d)/, '$1');
+      // remove any starting 'v' from version numbers
+      version = version.replace(/^v(\d)/, '$1');
 
-      result[depName] = {
-        name: depName,
-        version: depFoundVersion,
-        dependencies: {},
+      // bump package reference count (or assign to 1 if we haven't seen this before)
+      packageRefCount[name] = (packageRefCount[name] || 0) + 1;
+
+      result[name] = {
+        name,
+        version,
+        dependencies: this.buildDependencies(
+          composerJsonObj,
+          composerLockObj,
+          lockedPackage!, // undefined if transitive dependency
+          systemPackages,
+          includeDev,
+          false,
+          depRecursiveArray,
+          packageRefCount,
+        ),
+        labels: {
+          scope: isDevTree ? Scope.dev : Scope.prod,
+        },
       };
 
-      let refCount = packageReferencesCount[depName] || 0;
-      packageReferencesCount[depName] = ++refCount;
-
-      if (!this.alreadyAddedDep(depRecursiveArray, depName) && refCount < this.MAX_PACKAGE_REPEATS) {
-        depRecursiveArray.push(depName);
-        result[depName].dependencies =
-          ComposerParser.buildDependencies(composerJsonObj,
-            composerLockObjPackages,
-            _.find(composerLockObjPackages, {name: depName})!,
-            depRecursiveArray,
-            systemVersions,
-            includeDev,
-            packageReferencesCount);
-        depRecursiveArray.pop();
-      }
     }
 
+    // parse require-dev dependencies
+    for (const name of Object.keys(requireDev)) {
+
+      let version = '';
+
+      // lets find if this dependency has an object in composer.lock
+      const lockedPackage = allPackages.find((dep) => dep.name === name);
+
+      if (lockedPackage) {
+        version = this.getVersion(lockedPackage);
+      } else {
+        // here we use the system version or composer json - not a locked version
+        version = _.get(systemPackages, name) || _.get(requireDev, name);
+      }
+
+      // remove any starting 'v' from version numbers
+      version = version.replace(/^v(\d)/, '$1');
+
+      // bump package reference count (or assign to 1 if we haven't seen this before)
+      packageRefCount[name] = (packageRefCount[name] || 0) + 1;
+
+      result[name] = {
+        name,
+        version,
+        dependencies: this.buildDependencies(
+          composerJsonObj,
+          composerLockObj,
+          lockedPackage!, // undefined if transitive dependency
+          systemPackages,
+          includeDev,
+          true,
+          depRecursiveArray,
+          packageRefCount,
+        ),
+        labels: {
+          scope: Scope.dev,
+        },
+      };
+    }
+
+    // remove from recursive check
+    depRecursiveArray.pop();
+
+    // return dep tree
     return result;
   }
 
-  private static alreadyAddedDep(arrayOfFroms, packageName): boolean {
-    return arrayOfFroms.indexOf(packageName) > -1;
-  }
 }

@@ -7,7 +7,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "labels": { "scope": "prod" }
     },
     "symfony/monolog-bundle": {
       "name": "symfony/monolog-bundle",
@@ -20,7 +21,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "psr/log": {
               "name": "psr/log",
@@ -29,16 +31,20 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         },
         "symfony/config": {
           "name": "symfony/config",
@@ -47,7 +53,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "symfony/filesystem": {
               "name": "symfony/filesystem",
@@ -56,11 +63,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "symfony/dependency-injection": {
           "name": "symfony/dependency-injection",
@@ -69,7 +79,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "psr/container": {
               "name": "psr/container",
@@ -78,11 +89,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "symfony/http-kernel": {
           "name": "symfony/http-kernel",
@@ -91,7 +105,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "psr/log": {
               "name": "psr/log",
@@ -100,9 +115,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "symfony/debug": {
               "name": "symfony/debug",
@@ -111,7 +128,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 },
                 "psr/log": {
                   "name": "psr/log",
@@ -120,11 +138,14 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "labels": { "scope": "prod" }
                     }
-                  }
+                  },
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "symfony/event-dispatcher": {
               "name": "symfony/event-dispatcher",
@@ -133,9 +154,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "symfony/http-foundation": {
               "name": "symfony/http-foundation",
@@ -144,7 +167,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 },
                 "symfony/polyfill-mbstring": {
                   "name": "symfony/polyfill-mbstring",
@@ -153,13 +177,17 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "labels": { "scope": "prod" }
                     }
-                  }
+                  },
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "symfony/monolog-bridge": {
           "name": "symfony/monolog-bridge",
@@ -172,7 +200,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 },
                 "psr/log": {
                   "name": "psr/log",
@@ -181,20 +210,26 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "labels": { "scope": "prod" }
                     }
-                  }
+                  },
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     },
     "symfony/monolog-bridge": {
       "name": "symfony/monolog-bridge",
@@ -207,7 +242,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "psr/log": {
               "name": "psr/log",
@@ -216,18 +252,23 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     }
   }
 }
