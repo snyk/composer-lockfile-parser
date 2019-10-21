@@ -18,6 +18,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "bin",
+    "dist"
+  ],
   "keywords": [
     "snyk",
     "php",
