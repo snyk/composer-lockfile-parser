@@ -7,7 +7,8 @@
     "php": {
       "name": "php",
       "version": "7.1.12",
-      "dependencies": {}
+      "dependencies": {},
+      "labels": { "scope": "prod" }
     },
     "symfony/symfony": {
       "name": "symfony/symfony",
@@ -28,16 +29,20 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "labels": { "scope": "prod" }
                     }
-                  }
+                  },
+                  "labels": { "scope": "prod" }
                 },
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "doctrine/cache": {
               "name": "doctrine/cache",
@@ -46,9 +51,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "doctrine/collections": {
               "name": "doctrine/collections",
@@ -57,9 +64,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "doctrine/inflector": {
               "name": "doctrine/inflector",
@@ -68,9 +77,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "doctrine/lexer": {
               "name": "doctrine/lexer",
@@ -79,21 +90,26 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         },
         "psr/log": {
           "name": "psr/log",
@@ -102,9 +118,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "symfony/icu": {
           "name": "symfony/icu",
@@ -113,24 +131,29 @@
             "ext-intl": {
               "name": "ext-intl",
               "version": "1.1.0",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "lib-icu": {
               "name": "lib-icu",
               "version": ">=4.4",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "symfony/intl": {
               "name": "symfony/intl",
               "version": "~2.3",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "twig/twig": {
           "name": "twig/twig",
@@ -139,11 +162,14 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     },
     "yiisoft/yii": {
       "name": "yiisoft/yii",
@@ -152,9 +178,11 @@
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     },
     "zendframework/zendframework": {
       "name": "zendframework/zendframework",
@@ -163,9 +191,11 @@
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     },
     "aws/aws-sdk-php": {
       "name": "aws/aws-sdk-php",
@@ -182,9 +212,11 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "guzzlehttp/psr7": {
               "name": "guzzlehttp/psr7",
@@ -193,7 +225,8 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 },
                 "psr/http-message": {
                   "name": "psr/http-message",
@@ -202,18 +235,23 @@
                     "php": {
                       "name": "php",
                       "version": "7.1.12",
-                      "dependencies": {}
+                      "dependencies": {},
+                      "labels": { "scope": "prod" }
                     }
-                  }
+                  },
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "guzzlehttp/promises": {
           "name": "guzzlehttp/promises",
@@ -222,9 +260,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "guzzlehttp/psr7": {
           "name": "guzzlehttp/psr7",
@@ -233,7 +273,8 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             },
             "psr/http-message": {
               "name": "psr/http-message",
@@ -242,11 +283,14 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "mtdowling/jmespath.php": {
           "name": "mtdowling/jmespath.php",
@@ -255,16 +299,20 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     },
     "doctrine/common": {
       "name": "doctrine/common",
@@ -281,16 +329,20 @@
                 "php": {
                   "name": "php",
                   "version": "7.1.12",
-                  "dependencies": {}
+                  "dependencies": {},
+                  "labels": { "scope": "prod" }
                 }
-              }
+              },
+              "labels": { "scope": "prod" }
             },
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "doctrine/cache": {
           "name": "doctrine/cache",
@@ -299,9 +351,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "doctrine/collections": {
           "name": "doctrine/collections",
@@ -310,9 +364,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "doctrine/inflector": {
           "name": "doctrine/inflector",
@@ -321,9 +377,11 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "doctrine/lexer": {
           "name": "doctrine/lexer",
@@ -332,16 +390,20 @@
             "php": {
               "name": "php",
               "version": "7.1.12",
-              "dependencies": {}
+              "dependencies": {},
+              "labels": { "scope": "prod" }
             }
-          }
+          },
+          "labels": { "scope": "prod" }
         },
         "php": {
           "name": "php",
           "version": "7.1.12",
-          "dependencies": {}
+          "dependencies": {},
+          "labels": { "scope": "prod" }
         }
-      }
+      },
+      "labels": { "scope": "prod" }
     }
   }
 }
