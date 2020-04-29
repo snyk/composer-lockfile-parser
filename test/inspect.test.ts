@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as tap from 'tap';
-import * as _ from 'lodash';
+import * as _ from '@snyk/lodash';
 import * as path from 'path';
 import fetch from 'node-fetch';
 
