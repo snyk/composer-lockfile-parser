@@ -35,10 +35,9 @@
   "author": "snyk.io",
   "license": "Apache-2.0",
   "dependencies": {
-    "lodash": "^4.17.13"
+    "@snyk/lodash": "^4.17.15-patch"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.133",
     "@types/node": "6.14.6",
     "@types/node-fetch": "^2.5.2",
     "node-fetch": "^2.6.0",
