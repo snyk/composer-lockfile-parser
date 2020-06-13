@@ -1,4 +1,7 @@
-import * as _ from '@snyk/lodash';
+import * as _findKey from 'lodash.findkey';
+import * as _get from 'lodash.get';
+import * as _invert from 'lodash.invert';
+import * as _isEmpty from 'lodash.isempty';
 
 import {
   SystemPackages,
@@ -9,6 +12,13 @@ import {
   DepTreeDependencies,
   Scope,
 } from '../types';
+
+const _ = {
+  get: _get,
+  isEmpty: _isEmpty,
+  invert: _invert,
+  findKey: _findKey,
+};
 
 export class ComposerParser {
   // After this threshold, a package node in the dep tree won't have expanded dependencies.
