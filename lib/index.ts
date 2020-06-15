@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as _ from '@snyk/lodash';
+import * as _isEmpty from 'lodash.isempty';
 import * as path from 'path';
 
 import { InvalidUserInputError } from './errors';
@@ -31,7 +31,7 @@ function buildDepTree(
     systemVersions,
     includeDev,
   );
-  const hasDevDependencies = !_.isEmpty(manifestJson['require-dev']);
+  const hasDevDependencies = !_isEmpty(manifestJson['require-dev']);
 
   return {
     name,

@@ -1,11 +1,17 @@
 import * as fs from 'fs';
 import * as tap from 'tap';
-import * as _ from '@snyk/lodash';
+import * as _get from 'lodash.get';
+import * as _find from 'lodash.find';
 import * as path from 'path';
 import fetch from 'node-fetch';
 
 import { buildDepTreeFromFiles } from '../lib';
 import { systemVersionsStub } from './stubs/system_deps_stub';
+
+const _ = {
+  find: _find,
+  get: _get,
+};
 
 const deepTestFolders = [
   'proj_with_no_deps',

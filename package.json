@@ -35,11 +35,15 @@
   "author": "snyk.io",
   "license": "Apache-2.0",
   "dependencies": {
-    "@snyk/lodash": "^4.17.15-patch"
+    "lodash.findkey": "^4.6.0",
+    "lodash.get": "^4.4.2",
+    "lodash.invert": "^4.3.0",
+    "lodash.isempty": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "6.14.6",
     "@types/node-fetch": "^2.5.2",
+    "lodash.find": "^4.6.0",
     "node-fetch": "^2.6.0",
     "tap": "12.7.0",
     "tslint": "5.17.0",
