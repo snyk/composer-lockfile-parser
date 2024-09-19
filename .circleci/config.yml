@@ -3,13 +3,22 @@ version: 2.1
 orbs:
   prodsec: snyk/prodsec-orb@1
 
+commands:
+  install_deps:
+    description: Install dependencies
+    steps:
+      - run:
+          name: Install dependencies
+          command: npm install
+
 jobs:
   security-scans:
     resource_class: small
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:lts
     steps:
       - checkout
+      - install_deps
       - prodsec/security_scans:
           mode: auto
           release-branch: master
@@ -32,4 +41,6 @@ workflows:
 
       - security-scans:
           name: Security Scans
-          context: open_source-managed
+          context:
+            - open_source-managed
+            - nodejs-install
