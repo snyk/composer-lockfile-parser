@@ -1,4 +1,3 @@
-.idea/
 .nyc_output/
 node_modules/
 npm-debug.log
@@ -8,3 +7,7 @@ dist
 .DS_Store
 *.log
 /package-lock.json
+
+# IDE
+/.vscode/
+/.idea/

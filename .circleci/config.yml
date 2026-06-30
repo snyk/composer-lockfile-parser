@@ -2,6 +2,12 @@ version: 2.1
 
 orbs:
   prodsec: snyk/prodsec-orb@1
+  win: circleci/windows@5.0
+
+defaults: &defaults
+  resource_class: small
+  docker:
+    - image: cimg/node:24.16
 
 commands:
   install_deps:
@@ -13,9 +19,7 @@ commands:
 
 jobs:
   security-scans:
-    resource_class: small
-    docker:
-      - image: cimg/node:lts
+    <<: *defaults
     steps:
       - checkout
       - install_deps
@@ -24,9 +28,45 @@ jobs:
           release-branch: master
           open-source-additional-arguments: --exclude=test
           iac-scan: disabled
+  tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install dev dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm run test
+  tests-windows:
+    executor:
+      name: win/default
+      size: medium
+    steps:
+      - checkout
+      - run:
+          name: Install Node
+          command: |
+            nvm install 24.16.0
+            nvm use 24.16.0
+      - run:
+          name: Install dev dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm run test
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - install_deps
+      - run:
+          name: Release
+          command: |
+            export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
+            npx semantic-release@25.0.3
 
 workflows:
-  version: 2
   CICD:
     jobs:
       - prodsec/secrets-scan:
@@ -44,3 +84,22 @@ workflows:
           context:
             - open_source-managed
             - nodejs-install
+
+      - tests:
+          name: Tests
+
+      - tests-windows:
+          name: Tests (Windows)
+
+      - release:
+          name: Release
+          context:
+            - nodejs-install
+            - github-release
+          requires:
+            - Tests
+            - Tests (Windows)
+          filters:
+            branches:
+              only:
+                - master
