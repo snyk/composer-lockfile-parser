@@ -9,7 +9,9 @@
         "declaration": true,
         "importHelpers": true,
         "strict": true,
-        "noImplicitAny": false // Needed to compile tap
+        "skipLibCheck": true,
+        "useUnknownInCatchVariables": false,
+        "noImplicitAny": false
     },
     "include": [
         "lib"
