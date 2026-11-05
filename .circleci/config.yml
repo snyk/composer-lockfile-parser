@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   prodsec: snyk/prodsec-orb@1
-  win: circleci/windows@5.0
+  win: circleci/windows@5
 
 defaults: &defaults
   resource_class: small
