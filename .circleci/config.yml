@@ -9,7 +9,7 @@ orbs:
 defaults: &defaults
   resource_class: small
   docker:
-    - image: cimg/node:24.16
+    - image: cimg/node:22
 
 commands:
   install_deps:
@@ -32,6 +32,11 @@ jobs:
           iac-scan: disabled
   tests:
     <<: *defaults
+    parameters:
+      node_version:
+        type: string
+    docker:
+      - image: cimg/node:<< parameters.node_version >>
     steps:
       - checkout
       - run:
@@ -41,6 +46,9 @@ jobs:
           name: Run tests
           command: npm run test
   tests-windows:
+    parameters:
+      node_version:
+        type: string
     executor:
       name: win/default
       size: medium
@@ -49,8 +57,8 @@ jobs:
       - run:
           name: Install Node
           command: |
-            nvm install 24.16.0
-            nvm use 24.16.0
+            nvm install << parameters.node_version >>
+            nvm use << parameters.node_version >>
       - run:
           name: Install dev dependencies
           command: npm install
@@ -90,10 +98,18 @@ workflows:
             - prodsec-orb-runtime
 
       - tests:
-          name: Tests
+          name: Tests Node=<< matrix.node_version >>
+          matrix:
+            alias: Tests
+            parameters:
+              node_version: ['22', '24', '26']
 
       - tests-windows:
-          name: Tests (Windows)
+          name: Tests (Windows) Node=<< matrix.node_version >>
+          matrix:
+            alias: Tests (Windows)
+            parameters:
+              node_version: ['22', '24', '26']
 
       - release:
           name: Release
