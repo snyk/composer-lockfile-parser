@@ -9,7 +9,7 @@ orbs:
 defaults: &defaults
   resource_class: small
   docker:
-    - image: cimg/node:24.16
+    - image: cimg/node:24  # npm 11+ (Node 24) is needed for OIDC trusted publishing
 
 commands:
   install_deps:
@@ -32,6 +32,8 @@ jobs:
           iac-scan: disabled
   tests:
     <<: *defaults
+    docker:
+      - image: cimg/node:22  # tests run on the oldest supported Node.js
     steps:
       - checkout
       - run:
@@ -49,8 +51,8 @@ jobs:
       - run:
           name: Install Node
           command: |
-            nvm install 24.16.0
-            nvm use 24.16.0
+            nvm install 22
+            nvm use 22
       - run:
           name: Install dev dependencies
           command: npm install
